@@ -27,18 +27,23 @@ const LoginPage = () => {
         password,
       });
       sessionStorage.setItem("role",res.data.data.role)
-
+      const role = res.data?.data?.role
+      console.log(res.data.data.token)
       // Save token to localStorage
-      if (res.data.token) {
-        sessionStorage.setItem("token",res.data?.data.token)
-        sessionStorage.setItem("role",res.data?.data.newUser.role)
+      if (res.data.data.token) {
+        sessionStorage.setItem("token",res.data?.data?.token)
+        sessionStorage.setItem("role",role)
       }
       
 
       setMessage("Login successful!");
-
-      
-      navigate("/todo");
+       alert("login successfully")
+      if(role=="Admin"){
+        
+        navigate("/admin");
+      }else{
+        navigate("/todo");
+      }
 
     } catch (err) {
       console.error(err);

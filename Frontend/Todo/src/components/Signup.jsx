@@ -40,6 +40,7 @@ const navigate = useNavigate()
       setEmail("");
       setPassword("");
         navigate("/todo")
+        alert("sign up successfully")
     } catch (err) {
       console.error("API Error:", err);
       const msg = err.response?.data?.message || "Something went wrong";

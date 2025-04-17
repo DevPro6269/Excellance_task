@@ -28,7 +28,7 @@ const AdminUserManagementPage = () => {
   // Handle role change (toggle between "admin" and "user")
   const handleRoleChange = async (userId, currentRole) => {
     try {
-      const newRole = currentRole === "admin" ? "user" : "admin";
+      const newRole = currentRole === "Admin" ? "User" : "Admin";
       const res = await axios.patch(
         `http://localhost:8080/api/admin/users/${userId}/role`,
         { role: newRole },
@@ -39,6 +39,7 @@ const AdminUserManagementPage = () => {
         }
       );
       setSuccess(`User role updated to ${newRole}`);
+      alert("user's role changed")
       setUsers((prevUsers) =>
         prevUsers.map((user) =>
           user._id === userId ? { ...user, role: newRole } : user

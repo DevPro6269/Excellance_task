@@ -4,7 +4,7 @@ import { getAllTodos, getAllUsers, updateUserRole } from "../controllers/admin.c
 const router = express.Router()
 
 router.route("/users").get(isAuthenticate,getAllUsers)
-router.route("/users/:id/role").put(isAuthenticate,updateUserRole)
+router.route("/users/:id/role").patch(isAuthenticate,updateUserRole)
 
 router.route("/todos").get(isAuthenticate,getAllTodos)
 
