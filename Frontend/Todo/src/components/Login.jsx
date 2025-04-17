@@ -30,8 +30,8 @@ const LoginPage = () => {
 
       // Save token to localStorage
       if (res.data.token) {
-        sessionStorage.setItem("token", res.data.token);
-        sessionStorage.setItem("role",res.data.data.role)
+        sessionStorage.setItem("token",res.data?.data.token)
+        sessionStorage.setItem("role",res.data?.data.newUser.role)
       }
       
 

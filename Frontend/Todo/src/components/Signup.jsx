@@ -32,8 +32,8 @@ const navigate = useNavigate()
       setSuccess("Registration successful!");
       console.log("Backend response:", res.data);
       if(res.data?.data.token){
-        sessionStorage.setItem("role",res.data?.data.token)
-        sessionStorage.setItem("role",res.data.data.newUser.role)
+        sessionStorage.setItem("token",res.data?.data.token)
+        sessionStorage.setItem("role",res.data?.data.newUser.role)
       }
       // Optionally redirect or clear form
       setUsername("");
